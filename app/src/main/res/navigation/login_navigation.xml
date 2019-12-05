@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/login_navigation"
+    android:label="login"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.jetpacklifecycle.login.LoginFragment"
+        android:label="Login" />
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.jetpacklifecycle.login.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/enter" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.jetpacklifecycle.login.RegisterFragment"
+        android:label="RegisterFragment" >
+        <argument
+            android:name="email"
+            android:defaultValue="1126@qq.com"
+            app:argType="string"
+            />
+
+    </fragment>
+</navigation>
